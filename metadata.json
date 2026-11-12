@@ -1,0 +1,6 @@
+{
+  "name": "Ducky Productions - Conciertos en Roblox",
+  "description": "Sitio web oficial de Ducky Productions. Productora profesional de conciertos, espectáculos masivos, recintos y eventos musicales dentro de Roblox.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
