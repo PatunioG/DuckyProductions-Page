@@ -3,6 +3,7 @@ import { ConcertEvent, AccessRegistration, TicketTier } from '../types';
 import { StorageService } from '../services/storageService';
 import { DigitalTicket } from './DigitalTicket';
 import { Ticket, Search, CheckCircle, AlertCircle, Sparkles, User, Mail, ShieldAlert, ArrowRight } from 'lucide-react';
+import { resolveAssetUrl } from '../assets/images';
 
 interface RegistrationSectionProps {
   events: ConcertEvent[];
@@ -214,7 +215,7 @@ export const RegistrationSection: React.FC<RegistrationSectionProps> = ({
 
                   <div className="aspect-video bg-zinc-900 rounded-sm overflow-hidden relative">
                     <img
-                      src={selectedEvent.posterImage}
+                      src={resolveAssetUrl(selectedEvent.posterImage)}
                       alt={selectedEvent.title}
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"

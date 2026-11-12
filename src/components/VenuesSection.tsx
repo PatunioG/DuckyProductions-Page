@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Venue } from '../types';
 import { Building2, Users, Layers, Volume2, Sparkles, CheckCircle2, ChevronRight } from 'lucide-react';
+import { resolveAssetUrl } from '../assets/images';
 
 interface VenuesSectionProps {
   venues: Venue[];
@@ -86,7 +87,7 @@ export const VenuesSection: React.FC<VenuesSectionProps> = ({ venues }) => {
             {/* Visual Header Image */}
             <div className="relative aspect-[16/9] w-full bg-zinc-900 overflow-hidden">
               <img
-                src={selectedVenue.image}
+                src={resolveAssetUrl(selectedVenue.image)}
                 alt={`Recinto oficial ${selectedVenue.name}`}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

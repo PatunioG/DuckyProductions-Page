@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layers, Volume2, Cpu, Sparkles, Shield, Compass } from 'lucide-react';
+import { ASSET_IMAGES } from '../assets/images';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -58,7 +59,7 @@ export const AboutSection: React.FC = () => {
         <div className="lg:col-span-6 relative">
           <div className="aspect-[4/3] bg-zinc-900 border border-zinc-800 rounded-sm overflow-hidden shadow-2xl relative">
             <img
-              src="/src/assets/images/concert_neon_night_1794244586284.jpg"
+              src={ASSET_IMAGES.concertNeon}
               alt="Producción en directo de Ducky Productions"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"

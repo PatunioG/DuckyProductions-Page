@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ConcertEvent, Venue, AccessRegistration, ContactMessage, EventStatus, StaffMember } from '../types';
 import { StorageService } from '../services/storageService';
+import { resolveAssetUrl } from '../assets/images';
 import { 
   Shield, Lock, Plus, Edit2, Trash2, Users, Calendar, 
   MapPin, Download, RefreshCw, X, ExternalLink, UserCheck, 
@@ -651,7 +652,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                         <div className="flex items-center gap-4">
                           <div className="w-20 h-16 bg-zinc-900 border border-zinc-800 rounded-sm overflow-hidden shrink-0">
                             <img 
-                              src={evt.posterImage} 
+                              src={resolveAssetUrl(evt.posterImage)} 
                               alt={evt.title} 
                               className="w-full h-full object-cover" 
                               referrerPolicy="no-referrer"
@@ -1231,7 +1232,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                     {previewPosterUrl && (
                       <div className="w-14 h-10 bg-zinc-900 border border-zinc-700 rounded-sm overflow-hidden shrink-0">
                         <img 
-                          src={previewPosterUrl} 
+                          src={resolveAssetUrl(previewPosterUrl)} 
                           alt="Vista previa" 
                           className="w-full h-full object-cover" 
                           onError={(e) => {
@@ -1440,7 +1441,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                     />
                     {previewVenueImageUrl && (
                       <div className="w-12 h-9 bg-zinc-900 border border-zinc-700 rounded-sm overflow-hidden shrink-0">
-                        <img src={previewVenueImageUrl} alt="Preview" className="w-full h-full object-cover" />
+                        <img src={resolveAssetUrl(previewVenueImageUrl)} alt="Preview" className="w-full h-full object-cover" />
                       </div>
                     )}
                   </div>

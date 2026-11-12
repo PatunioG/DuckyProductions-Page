@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, MapPin, Users, Sparkles, ExternalLink, ArrowRight, X, Info } from 'lucide-react';
 import { ConcertEvent, EventStatus } from '../types';
+import { resolveAssetUrl } from '../assets/images';
 
 interface EventsSectionProps {
   events: ConcertEvent[];
@@ -120,7 +121,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({
               {/* Poster Image Container */}
               <div className="relative aspect-[16/10] overflow-hidden bg-zinc-900">
                 <img
-                  src={event.posterImage}
+                  src={resolveAssetUrl(event.posterImage)}
                   alt={`Cartel oficial del concierto ${event.title}`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
@@ -224,7 +225,7 @@ export const EventsSection: React.FC<EventsSectionProps> = ({
             {/* Modal Header Image */}
             <div className="relative h-56 sm:h-64 bg-zinc-900 shrink-0">
               <img
-                src={selectedEventModal.posterImage}
+                src={resolveAssetUrl(selectedEventModal.posterImage)}
                 alt={selectedEventModal.title}
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

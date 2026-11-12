@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GalleryPhoto } from '../types';
 import { Eye, X, MapPin, Calendar } from 'lucide-react';
+import { resolveAssetUrl } from '../assets/images';
 
 interface GallerySectionProps {
   photos: GalleryPhoto[];
@@ -60,7 +61,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ photos }) => {
             className="group relative aspect-[16/10] bg-zinc-900 border border-zinc-800 rounded-sm overflow-hidden cursor-pointer"
           >
             <img
-              src={photo.image}
+              src={resolveAssetUrl(photo.image)}
               alt={photo.title}
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               referrerPolicy="no-referrer"
@@ -105,7 +106,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ photos }) => {
             {/* Large Image */}
             <div className="relative aspect-[16/10] bg-black">
               <img
-                src={activePhoto.image}
+                src={resolveAssetUrl(activePhoto.image)}
                 alt={activePhoto.title}
                 className="w-full h-full object-contain"
                 referrerPolicy="no-referrer"

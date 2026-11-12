@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowDown, Calendar, MapPin, Play, Radio } from 'lucide-react';
 import { ConcertEvent } from '../types';
+import { ASSET_IMAGES, resolveAssetUrl } from '../assets/images';
 
 interface HeroSectionProps {
   headlineEvent?: ConcertEvent;
@@ -18,7 +19,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       {/* Background Cinematic Image with measured gradient scrim */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/images/hero_roblox_stadium_concert_1794244583969.jpg"
+          src={ASSET_IMAGES.heroStadium}
           alt="Estadio gigante iluminado durante un concierto masivo de Roblox por Ducky Productions"
           referrerPolicy="no-referrer"
           className="w-full h-full object-cover object-center scale-105 animate-in fade-in zoom-in-105 duration-1000"
@@ -76,7 +77,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 bg-zinc-900 border border-zinc-800 rounded-sm overflow-hidden shrink-0 hidden sm:block">
                 <img 
-                  src={headlineEvent.posterImage} 
+                  src={resolveAssetUrl(headlineEvent.posterImage)} 
                   alt={headlineEvent.title} 
                   className="w-full h-full object-cover" 
                   referrerPolicy="no-referrer"
